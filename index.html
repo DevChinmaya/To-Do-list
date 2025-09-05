@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calendar Todo — Daywise</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">🗓️</div>
+        <div>
+          <h1>Calendar Todo</h1>
+          <p class="subtitle">Day-wise tasks saved locally</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="prevMonth" title="Previous month">‹</button>
+        <div id="currentMonthLabel" class="month-label"></div>
+        <button id="nextMonth" title="Next month">›</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Left: Calendar -->
+      <section class="calendar-section">
+        <div class="calendar" id="calendar"></div>
+      </section>
+
+      <!-- Right: Tasks for selected date -->
+      <section class="tasks-section">
+        <div class="day-header">
+          <h2 id="selectedDateLabel">Select a date</h2>
+          <small id="selectedDateIso"></small>
+        </div>
+
+        <form id="taskForm" class="task-form" autocomplete="off">
+          <input id="taskInput" type="text" placeholder="Add a new task for this date..." />
+          <button type="submit">Add</button>
+        </form>
+
+        <ul id="taskList" class="task-list"></ul>
+
+        <div class="foot">
+          <button id="clearDateTasks" class="danger">Clear all tasks for this date</button>
+          <button id="clearAll" class="danger">Clear all data</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Data stored locally in your browser · Responsive · No backend</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
